@@ -23,8 +23,7 @@ function withdrawMoney(amount){
     balance = balance - amount -0.50;
     alert("Your funds have successfully been transfered. \n Your new balance is "+balance)
 
-}  
-    
+}      
 
 
 
