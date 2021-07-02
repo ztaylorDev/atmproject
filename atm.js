@@ -3,28 +3,23 @@ const {pin, bal} = require('./account')
 
 
 function getBalance(){
-    alert("You have a remaining balance of: "+balance)
+    console.log(bal)
 }
 
 
 
 function withdrawMoney(amount){
-    if (amount %5 == 0){
-     let newBal = bal - amount;
-     return newBal
-    }
-    else if (amount >= balance){
-        alert('You have Insufficient');
-        return false;
-    } 
-    
-    // balance = balance - amount -0.50;
-    // console.log("Your funds have successfully been transfered. \n Your new balance is "+balance)
+    let newBal = bal - amount;
+    return newBal;
+}
 
-}   
 
-function depostie(){
 
+ 
+
+function deposit(cashFlow){ 
+    let moreMon = bal + cashFlow
+    console.log(moreMon);
 
 }
 
@@ -45,6 +40,6 @@ function validatePin(){
 module.exports = {
     getBal: getBalance,
     withDr: withdrawMoney,
-    depo: depostie,
+    depo: deposit,
     val: validatePin,
 }

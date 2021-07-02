@@ -1,19 +1,42 @@
+const { bal } = require('./account')
+const { getBal, withDr, depo } = require('./atm')
 const atm = require('./atm')
-
-// let pinNumber = prompt('Enter your PIN')();
-// const pinEntered = prompt();
-//     while (pinNumber != "5708"){   
-// }
-//     if (pinNumber === "5708"){
-//     console.log("Pin Validated");
-// }
-
-// if (pinNumber === "5708"){
-//     let pinNumber = correctPin;
-// }
+const prompt = require('prompt-sync')()
 
 
-// function atmMenu(){
+let userInput = prompt("Would you like to see your funds? yes or no. ")
+    if(userInput == "yes"){
+        getBal()
+    }
+
+
+
+let userInput2 = prompt("Would you like to deposit, withdraw, or exit. ")
+    if(userInput2 == "deposit"){
+        depo(prompt("how much would you like to deposit. "))
     
-// }
-atm.withDr(100) 
+    }
+    // else if(userInput2 == "withdraw"){
+    //     withDr()
+    // }
+    // else if(userInput2 == 3){  must create means to exit
+
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// atm.depo(100)
+
+
