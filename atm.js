@@ -1,6 +1,5 @@
-import account from "./account.js";
+const {pin, bal} = require('./account')
 
-let balance = 5000.0;
 
 
 function getBalance(){
@@ -9,23 +8,20 @@ function getBalance(){
 
 
 
-
 function withdrawMoney(amount){
-    if (amount %5 != 0){
-        alert('Please only enter multiples of 5');
-        return false;
+    if (amount %5 == 0){
+     let newBal = bal - amount;
+     return newBal
     }
     else if (amount >= balance){
         alert('You have Insufficient');
         return false;
     } 
     
-    balance = balance - amount -0.50;
-    alert("Your funds have successfully been transfered. \n Your new balance is "+balance)
+    // balance = balance - amount -0.50;
+    // console.log("Your funds have successfully been transfered. \n Your new balance is "+balance)
 
-}      
-
-
+}   
 
 function depostie(){
 
@@ -35,4 +31,20 @@ function depostie(){
 function validatePin(){
 
 
+}
+
+
+
+
+
+
+
+
+
+
+module.exports = {
+    getBal: getBalance,
+    withDr: withdrawMoney,
+    depo: depostie,
+    val: validatePin,
 }
