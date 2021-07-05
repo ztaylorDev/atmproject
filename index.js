@@ -5,7 +5,7 @@ const prompt = require('prompt-sync')()
 const {validatePin} = require("./atm")
 atm.validatePin()
 
-
+do{
 let userInput = prompt("Would you like to see your funds? yes or no. ")
     if(userInput == "yes"){
         getBal()
@@ -22,12 +22,10 @@ let userInput2 = prompt("Would you like to deposit, withdraw, or exit. ")
         case "withdraw":
             withDr(parseInt(prompt("how much would you like to withdraw. ")))   
         break;    
-
-       
-
-
     }
-
+    userInput2 = prompt("Would you like to return to the menu? 'Y' or 'N' ").toLowerCase();
+}while(userInput2 != 'n')
+console.log('Thankyou for choosing Z Bank');
 
 
 
