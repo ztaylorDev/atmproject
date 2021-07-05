@@ -3,8 +3,8 @@ const { getBal, withDr, depo } = require('./atm')
 const atm = require('./atm')
 const prompt = require('prompt-sync')()
 const {validatePin} = require("./atm")
-
 atm.validatePin()
+
 
 let userInput = prompt("Would you like to see your funds? yes or no. ")
     if(userInput == "yes"){
@@ -23,7 +23,14 @@ let userInput2 = prompt("Would you like to deposit, withdraw, or exit. ")
             withDr(parseInt(prompt("how much would you like to withdraw. ")))   
         break;    
 
+       
+
+
     }
+
+
+
+
 
     // if(userInput2 == "deposit"){
     //     depo(parseInt(prompt("how much would you like to deposit. ")))
