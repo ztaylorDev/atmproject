@@ -1,4 +1,5 @@
 const {pin, bal} = require('./account')
+const prompt = require('prompt-sync')()
 
 
 
@@ -10,7 +11,7 @@ function getBalance(){
 
 function withdrawMoney(amount){
     let newBal = bal - amount;
-    return newBal;
+    console.log(newBal);
 }
 
 
@@ -24,7 +25,11 @@ function deposit(cashFlow){
 }
 
 function validatePin(){
-
+    let yourPin = prompt("Enter your pin ")
+    if (yourPin == pin){
+        console.log("PIN Verified")
+        return yourPin;
+    }
 
 }
 
@@ -41,5 +46,5 @@ module.exports = {
     getBal: getBalance,
     withDr: withdrawMoney,
     depo: deposit,
-    val: validatePin,
+    validatePin: validatePin,
 }
